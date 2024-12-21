@@ -174,7 +174,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p1.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Paris</h4>
+          <h4 class="card-title" id="Paris"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Paris</h4>
           <p class="card-text">France</p>
           <p class="card-text">6 days - 5 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2199</h4> per person</p>
@@ -195,7 +195,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p2.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Mumbai</h4>
+          <h4 class="card-title" id="Mumbai"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Mumbai</h4>
           <p class="card-text">India</p>
           <p class="card-text">8 days - 7 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 1799</h4> per person</p>
@@ -216,7 +216,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p3.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Santorini</h4>
+          <h4 class="card-title" id="Santorini"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Santorini</h4>
           <p class="card-text">Greece</p>
           <p class="card-text">5 days - 4 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2659</h4> per person</p>
@@ -240,7 +240,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p4.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Sydney</h4>
+          <h4 class="card-title" id="Sydney"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Sydney</h4>
           <p class="card-text">Australia</p>
           <p class="card-text">6 days - 5 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2799</h4> per person</p>
@@ -261,7 +261,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p5.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Tokyo</h4>
+          <h4 class="card-title" id="Tokyo"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Tokyo</h4>
           <p class="card-text">Japan</p>
           <p class="card-text">8 days - 7 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2599</h4> per person</p>
@@ -282,7 +282,7 @@
       <div id="card" class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
         <img class="card-img-top" src="p6.jpeg" alt="place">
         <div class="card-body">
-          <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Merlion</h4>
+          <h4 class="card-title" id="Merlion"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Merlion</h4>
           <p class="card-text">Singapore</p>
           <p class="card-text">7 days - 6 nights</p>
           <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 1999</h4> per person</p>
@@ -312,15 +312,15 @@
         <div class="modal-body container text-center text-dark p-5">
           <form>
             <label><i class="fa fa-envelope"></i> E-mail:</label><br>
-            <input type="email" placeholder="Enter e-mail id"><br>
+            <input type="email" class="form-control" placeholder="Enter e-mail id"><br>
             <label><i class="fa fa-user"></i> How many:</label><br>
-            <input type="number" placeholder="Number of guests"><br>
+            <input type="number" class="form-control" placeholder="Number of guests"><br>
             <label><i class="fa fa-calendar"></i> Date:</label><br>
-            <input type="date">
+            <input type="date" class="form-control">
           </form>
         </div>
         <div class="modal-footer justify-content-center">
-          <button type="button" class="btn text-light" onclick="btn()" style="background-color: #005477;"><i class="fa fa-usd"></i> Pay</button>
+          <button type="button" class="btn text-light" onclick="btn()" style="background-color: #005477;">Submit</button>
         </div>
   
       </div>
@@ -614,6 +614,7 @@
       }
     };
     function btn(){
+      
       alert("Your Booking is Successfull!!")
       location.reload()
     }
