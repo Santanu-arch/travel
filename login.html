@@ -14,98 +14,64 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
 
   <style>
-    /* Full-screen background video */
-.background-video {
-  position: fixed; /* Fixed position so it stays in the background */
-  top: 0;
-  left: 0;
-  width: 100vw; /* 100% of the viewport width */
-  height: 100vh; /* 100% of the viewport height */
-  object-fit: cover; /* Ensures video covers the screen without stretching */
-  object-position: center center; /* Ensures the video remains centered */
-  z-index: -1; /* Places the video behind the content */
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .background-video {
-    object-position: center center; /* Keeps the video centered on mobile */
-  }
-}
-
-/* PC or large-screen adjustments */
-@media (min-width: 1024px) {
-  .background-video {
-    object-position: center center; /* Keeps the video centered on larger screens */
-  }
-}
-
-/* Extra-large screens (for example 4K or large desktop screens) */
-@media (min-width: 1600px) {
-  .background-video {
-    object-position: center center; /* Keeps the video centered on very large screens */
-  }
-}
-
-
-    /* Card Styling */
-    .card {
-      max-width: 400px; /* Limit width */
-      margin: 50px auto; /* Center card */
-      padding: 30px; /* Add padding */
-      background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
     }
 
-    /* Button Styling */
+    .card {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
     .btn {
-      width: 100%; /* Full width for button */
-      padding: 10px; /* Padding for the button */
-      font-size: 16px; /* Button font size */
-      border-radius: 5px; /* Rounded button */
-      transition: background-color 0.3s ease; /* Smooth transition */
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #004466; /* Darken color on hover */
+      background-color: #004466;
     }
 
-    /* Input Styling */
     .form-control {
-      border-radius: 5px; /* Rounded inputs */
-      padding: 10px; /* Padding for input fields */
-      margin-top: 10px; /* Space above inputs */
-      border: 1px solid #ccc; /* Light border for inputs */
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
     }
 
-    /* Forgot Password and Register Links */
     a {
-      text-decoration: none; /* Remove underline */
-      color: #005477; /* Text color for links */
+      text-decoration: none;
+      color: #005477;
     }
 
     a:hover {
-      color: #004466; /* Darker color when hovered */
+      color: #004466;
     }
 
-    /* Add spacing between elements */
     .text-center {
-      margin-bottom: 15px; /* Space between each section */
+      margin-bottom: 15px;
     }
 
-    /* Initially hide the second card */
     .signup-card {
       display: none;
     }
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <video class="background-video" autoplay loop muted>
-    <source src="login.mp4" type="video/mp4">
-  </video>
-
   <!-- Navbar -->
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
@@ -124,18 +90,23 @@
     </div>
   </nav>
 
+  <!-- Background Video -->
+  <video class="background-video" autoplay loop muted>
+    <source src="login.mp4" type="video/mp4">
+  </video>
+
   <!-- Sign In Card -->
   <div class="card shadow-lg rounded-lg signin-card">
     <div class="card-body">
       <h2 class="text-center" style="color: #005477;">Sign In</h2>
-      <form action="/action_page.php">
+      <form id="signin-form">
         <div class="text-center mb-3 mt-3">
           <label for="email" class="form-label">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
         </div>
         <div class="text-center mb-3">
           <label for="pwd" class="form-label">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
         </div>
         <div class="text-center form-check mb-3">
           <label class="form-check-label">
@@ -146,7 +117,7 @@
           <span>&nbsp;</span>
           <a href="#">Forgot Password?</a>
         </div>
-        <button type="submit" class="btn text-light text-center" style="background-color: #005477;">Sign In</button>
+        <a href="#" type="submit" onclick="sign_in(event)" class="btn text-light text-center" style="background-color: #005477;">Sign In</a>
         <div class="login-register text-center mt-3">
           <p>Don't have an account? <a href="#" class="register-link" id="go-to-signup">Sign Up</a></p>
         </div>
@@ -158,30 +129,30 @@
   <div class="card shadow-lg rounded-lg signup-card">
     <div class="card-body">
       <h2 class="text-center" style="color: #005477;">Sign Up</h2>
-      <form action="/action_page.php">
+      <form id="signup-form">
         <div class="text-center mb-3 mt-3">
           <label for="name" class="form-label">Username:</label>
-          <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+          <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
         </div>
         <div class="text-center mb-3">
           <label for="email" class="form-label">E-mail:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" id="email-signup" placeholder="Enter email" name="email" required>
         </div>
         <div class="text-center mb-3">
           <label for="pwd" class="form-label">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+          <input type="password" class="form-control" id="pwd-signup" placeholder="Enter password" name="pswd" required>
         </div>
         <div class="text-center mb-3">
           <label for="pwd" class="form-label">Confirm Password:</label>
-          <input type="password" class="form-control" id="cpwd" placeholder="Enter password again" name="cpswd">
+          <input type="password" class="form-control" id="cpwd-signup" placeholder="Enter password again" name="cpswd" required>
         </div>
         <div class="text-center form-check mb-3">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="remember"> I agree to
+            <input class="form-check-input" type="checkbox" id="terms-checkbox" name="terms"> I agree to
           </label>
           <a href="#">terms & conditions</a>
         </div>
-        <button type="submit" class="btn text-light text-center" style="background-color: #005477;">Sign Up</button>
+        <a href="#" type="submit" onclick="sign_up(event)" class="btn text-light text-center" style="background-color: #005477;">Sign Up</a>
         <div class="login-register text-center mt-3">
           <p>Already have an account? <a href="#" class="login-link" id="go-to-signin">Sign In</a></p>
         </div>
@@ -190,18 +161,62 @@
   </div>
 
   <script>
-    // jQuery to handle showing and hiding cards with fade effect
     $('#go-to-signup').click(function(event) {
       event.preventDefault();
-      $('.signin-card').fadeOut(300); // Fade out sign-in card in 300ms
-      $('.signup-card').fadeIn(300);  // Fade in sign-up card in 300ms
+      $('.signin-card').fadeOut(300);
+      $('.signup-card').fadeIn(300);
     });
 
     $('#go-to-signin').click(function(event) {
       event.preventDefault();
-      $('.signup-card').fadeOut(300); // Fade out sign-up card in 300ms
-      $('.signin-card').fadeIn(300);  // Fade in sign-in card in 300ms
+      $('.signup-card').fadeOut(300);
+      $('.signin-card').fadeIn(300);
     });
+
+    function sign_in(event) {
+      event.preventDefault();
+
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('pwd').value;
+
+      if (email === "" || password === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      alert("You have successfully signed in!");
+
+      window.location.href = "index.html";
+    }
+
+    function sign_up(event) {
+      event.preventDefault();
+
+      var username = document.getElementById('name').value;
+      var email = document.getElementById('email-signup').value;
+      var password = document.getElementById('pwd-signup').value;
+      var confirmPassword = document.getElementById('cpwd-signup').value;
+      var termsCheckbox = document.getElementById('terms-checkbox').checked;
+
+      if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      if (!termsCheckbox) {
+        alert("You must agree to the terms and conditions.");
+        return false;
+      }
+     
+      alert("You have successfully signed up!");
+
+      window.location.href = "index.html";
+    }
   </script>
 </body>
 </html>
