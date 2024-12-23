@@ -643,11 +643,71 @@ function book(event) {
 
 function btn() {
   const form = document.getElementById("bookingForm");
-  if (form.checkValidity()) {
-    alert("Your Booking is Successful!!");
+
+  const email = document.getElementById("email").value;
+  const guests = document.getElementById("guests").value;
+  const date = document.getElementById("date").value;
+  const destination = document.getElementById("destination").value;
+
+  if (!email || !guests || !date || !destination) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  
+  let costPerPerson;
+  let duration;
+  
+  switch(destination) {
+    case "Paris, France":
+      costPerPerson = 2199;
+      duration = "6 days - 5 nights";
+      break;
+    case "Mumbai, India":
+      costPerPerson = 1799;
+      duration = "8 days - 7 nights";
+      break;
+    case "Santorini, Greece":
+      costPerPerson = 2659;
+      duration = "5 days - 4 nights";
+      break;
+    case "Sydney, Australia":
+      costPerPerson = 2799;
+      duration = "6 days - 5 nights";
+      break;
+    case "Tokyo, Japan":
+      costPerPerson = 2499;
+      duration = "7 days - 6 nights";
+      break;
+    case "Marina Bay, Singapore":
+      costPerPerson = 2999;
+      duration = "5 days - 4 nights";
+      break;
+    default:
+      alert("Invalid destination.");
+      return;
+  }
+
+  const totalCost = costPerPerson * guests;
+
+  const confirmationMessage = `
+    Booking Details:
+    - Email: ${email}
+    - Number of Guests: ${guests}
+    - Date: ${date}
+    - Destination: ${destination}
+    - Duration: ${duration}
+    - Cost per Person: $${costPerPerson}
+    - Total Cost: $${totalCost}
+  `;
+  
+  const confirmation = confirm(confirmationMessage + "\n\nDo you want to confirm your booking?");
+  
+  if (confirmation) {
+    alert("Your booking is confirmed!");
     location.reload();
   } else {
-    alert("Please fill all fields correctly.");
+    alert("Your booking is cancelled!");
+    location.reload();
   }
 }
 
@@ -674,7 +734,6 @@ function tokyo() {
 function marina() {
   document.getElementById("destination").value = "Marina Bay, Singapore";
 }
-
   </script>
 </body>
 </html>
