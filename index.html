@@ -128,11 +128,11 @@
           <form onsubmit="book(event)">
            <div class="mb-3">
             <label class="form-label" for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" style="border-radius: 10px;" required>
+            <input type="text" class="form-control" id="namef" placeholder="Enter name" name="name" style="border-radius: 10px;" required>
           </div>
           <div class="mb-3">
             <label class="form-label" for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter e-mail" name="email" style="border-radius: 10px;" required>
+            <input type="email" class="form-control" id="emailf" placeholder="Enter e-mail" name="email" style="border-radius: 10px;" required>
           </div> 
           <div class="mb-3">
             <label class="form-label" for="place">Where to:</label>
@@ -319,7 +319,7 @@
           <form id="bookingForm">
             <div class="mb-3">
               <label for="name" class="form-label"><i class="fa fa-user"></i> Name:</label>
-              <input type="name" class="form-control" id="name" placeholder="Enter name" required>
+              <input type="text" class="form-control" id="name" placeholder="Enter name" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label"><i class="fa fa-envelope"></i> E-mail:</label>
@@ -650,8 +650,8 @@
 function book(event) {
   event.preventDefault();
  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
+  const name = document.getElementById('namef').value;
+  const email = document.getElementById('emailf').value;
   const place = document.getElementById('place').value;
   const num = document.getElementById('num').value;
   const arrivals = document.getElementById('arrivals').value;
