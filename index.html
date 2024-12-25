@@ -117,7 +117,7 @@
   <div class="row p-3 align-items-center">
     <!-- Image column -->
     <div data-aos="fade-left" class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-      <img src="img1.png" class="rounded" height="350" width="350" alt="image">
+      <img src="img1.png" class="rounded" height="450" width="450" alt="image">
     </div>
 
     <!-- Form column -->
@@ -126,6 +126,14 @@
         <div class="card-body p-4" style="background-color: #f9f9f9;">
           <h4 class="card-title text-center mb-4" style="color: #005477;">Book Your Stay</h4>
           <form onsubmit="book(event)">
+           <div class="mb-3">
+            <label class="form-label" for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" style="border-radius: 10px;" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter e-mail" name="email" style="border-radius: 10px;" required>
+          </div> 
           <div class="mb-3">
             <label class="form-label" for="place">Where to:</label>
             <input type="text" class="form-control" id="place" placeholder="Place name" name="place" style="border-radius: 10px;" required>
@@ -640,9 +648,33 @@
     };
     
 function book(event) {
-  event.preventDefault(); 
-  alert("Your Booking is Successful!!");
-  location.reload(); 
+  event.preventDefault();
+ 
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const place = document.getElementById('place').value;
+  const num = document.getElementById('num').value;
+  const arrivals = document.getElementById('arrivals').value;
+  const leaving = document.getElementById('leaving').value;
+
+  const confirmationMessage = `
+    Name: ${name}
+    Email: ${email}
+    Place: ${place}
+    Number of Guests: ${num}
+    Arrival Date: ${arrivals}
+    Leaving Date: ${leaving}
+  `;
+
+  const isConfirmed = confirm(`Please confirm your booking details:\n\n${confirmationMessage}`);
+
+  if (isConfirmed) {
+    alert("Your booking is confirmed!");
+    location.reload();
+  }else{
+    alert("Your booking is failed!");
+    location.reload();
+  }
 }
 
 function btn() {
@@ -712,7 +744,7 @@ function btn() {
     alert("Your booking is confirmed!");
     location.reload();
   } else {
-    alert("Your booking is cancelled!");
+    alert("Your booking is failed!");
     location.reload();
   }
 }
