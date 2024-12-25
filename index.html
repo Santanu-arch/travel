@@ -310,11 +310,15 @@
         <div class="modal-body">
           <form id="bookingForm">
             <div class="mb-3">
+              <label for="name" class="form-label"><i class="fa fa-user"></i> Name:</label>
+              <input type="name" class="form-control" id="name" placeholder="Enter name" required>
+            </div>
+            <div class="mb-3">
               <label for="email" class="form-label"><i class="fa fa-envelope"></i> E-mail:</label>
               <input type="email" class="form-control" id="email" placeholder="Enter e-mail id" required>
             </div>
             <div class="mb-3">
-              <label for="guests" class="form-label"><i class="fa fa-user"></i> Number of Guests:</label>
+              <label for="guests" class="form-label"><i class="fa fa-users"></i> Number of Guests:</label>
               <input type="number" class="form-control" id="guests" placeholder="Number of guests" required>
             </div>
             <div class="mb-3">
@@ -644,12 +648,13 @@ function book(event) {
 function btn() {
   const form = document.getElementById("bookingForm");
 
+  const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const guests = document.getElementById("guests").value;
   const date = document.getElementById("date").value;
   const destination = document.getElementById("destination").value;
 
-  if (!email || !guests || !date || !destination) {
+  if (!name || !email || !guests || !date || !destination) {
     alert("Please fill in all fields.");
     return;
   }
@@ -691,6 +696,7 @@ function btn() {
 
   const confirmationMessage = `
     Booking Details:
+    - Name: ${name}
     - Email: ${email}
     - Number of Guests: ${guests}
     - Date: ${date}
