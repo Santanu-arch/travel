@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>GlobeTrek</title>
+  
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-primary bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <a class="navbar-brand mx-auto" href="#home"><b style="color: #005477;">Globe</b><b>Trek</b></a>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <a href="login.html" class="btn" style="background-color: #005477; color: white;">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <div  id="home">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators" style="display: none;">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+    </div>
+  
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video src="vid2.webm" class="d-block w-100" loop autoplay muted></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid3.webm" class="d-block w-100" loop autoplay muted></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid1.webm" class="d-block w-100" loop autoplay muted></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid4.webm" class="d-block w-100" loop autoplay muted></video>
+      </div>
+    </div>
+  
+    <div data-aos="fade" class="overlay-content position-absolute top-50 start-50 translate-middle text-center text-white">
+      <h3><b>The World is Waiting, Let’s Go</b></h3>
+      <p>Discover new places with us</p>
+      <a href="#booking" class="btn btn-light explore-btn">Explore Now</a>
+    </div>
+  </div>
+
+  <div class="container-fluid p-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 style="color: #005477;">About Us</h3>
+        <p>GlobeTrek is a dynamic travel agency dedicated to curating unforgettable travel experiences around the world. With a focus on personalized itineraries, exceptional customer service, and a passion for adventure, GlobeTrek helps travelers explore unique destinations, cultures, and activities, whether for relaxation or excitement. From tailored vacations to group tours, GlobeTrek ensures seamless journeys that cater to every traveler's needs and dreams.</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="img.jpeg" class="rounded-circle" height="250" width="250" alt="image">
+      </div>
+     </div>
+   </div>
+ </div>
+  
+  <!-- Booking -->
+  <div class="container-fluid p-5" style="background-color: #87CEEB;" id="booking">
+  <h1 id="book-now">
+    <span style="background-color: #005477; color: #87CEEB;">B</span>
+    <span style="background-color: #005477; color: #87CEEB;">O</span>
+    <span style="background-color: #005477; color: #87CEEB;">O</span>
+    <span style="background-color: #005477; color: #87CEEB;">K</span>
+    <span>&nbsp;</span>
+    <span style="background-color: #005477; color: #87CEEB;">N</span>
+    <span style="background-color: #005477; color: #87CEEB;">O</span>
+    <span style="background-color: #005477; color: #87CEEB;">W</span>
+  </h1>
+
+  <div class="row p-3 align-items-center">
+    <!-- Image column -->
+    <div data-aos="fade-left" class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+      <img src="img1.png" class="rounded" height="450" width="450" alt="image">
+    </div>
+
+    <!-- Form column -->
+    <div data-aos="fade-right" class="col-md-6 d-flex justify-content-center align-items-center">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px; border-radius: 15px; border: 2px solid #005477; overflow: hidden;">
+    <div class="card-body p-4" style="background-color: #f9f9f9;">
+      <h4 class="card-title text-center mb-4" style="color: #005477;">Book Your Travel Essentials</h4>
+      <div class="row g-4 p-2 text-center"> <!-- Added g-4 here to add gap between columns -->
+        <div class="col-md-6">
+          <a href="tour.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Tour</h6>
+        </div>
+        <div class="col-md-6">
+          <a href="hotel.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-building fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Hotel</h6>
+        </div>
+      </div>
+      <div class="row g-4 p-2 text-center"> <!-- Added g-4 here to add gap between columns -->
+        <div class="col-md-6">
+          <a href="train.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-train fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Train</h6>
+        </div>
+        <div class="col-md-6">
+          <a href="plane.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Plane</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- Package -->
+  <div class="container-fluid p-5" style="background-color: #005477;" id="booking">
+    <h1 id="book-now">
+      <span style="background-color: #87CEEB; color: #005477;">P</span>
+      <span style="background-color: #87CEEB; color: #005477;">A</span>
+      <span style="background-color: #87CEEB; color: #005477;">C</span>
+      <span style="background-color: #87CEEB; color: #005477;">K</span>
+      <span style="background-color: #87CEEB; color: #005477;">A</span>
+      <span style="background-color: #87CEEB; color: #005477;">G</span>
+      <span style="background-color: #87CEEB; color: #005477;">E</span>
+      <span style="background-color: #87CEEB; color: #005477;">S</span>
+    </h1>
+
+    <!-- Updated row for 3 cards per row -->
+    <div class="row p-3 align-items-center">
+      <!-- Card 1 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p1.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Paris</h4>
+            <p class="card-text">France</p>
+            <p class="card-text">6 days - 5 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2199</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-o" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <button data-bs-toggle="modal" data-bs-target="#myModal" onclick="paris()" class="btn text-light" style="background-color: #87CEEB;">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p2.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Mumbai</h4>
+            <p class="card-text">India</p>
+            <p class="card-text">8 days - 7 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 1799</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-o" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" onclick="mumbai()" class="btn text-light" style="background-color: #87CEEB;">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p3.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Santorini</h4>
+            <p class="card-text">Greece</p>
+            <p class="card-text">5 days - 4 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2659</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-o" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" onclick="santorini()" class="btn text-light" style="background-color: #87CEEB;">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row with Cards -->
+    <div class="row p-3 align-items-center">
+      <!-- Card 4 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p4.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Sydney</h4>
+            <p class="card-text">Australia</p>
+            <p class="card-text">6 days - 5 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2799</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-o" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" onclick="sydney()" class="btn text-light" style="background-color: #87CEEB;">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p5.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Tokyo</h4>
+            <p class="card-text">Japan</p>
+            <p class="card-text">7 days - 6 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2499</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" onclick="tokyo()" class="btn text-light" style="background-color: #87CEEB;">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div data-aos="fade-up" class="col-md-4 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+        <div class="card" style="width:100%; border: 2px solid #87CEEB; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+          <img class="card-img-top" src="p6.jpeg" alt="place">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-map-marker" aria-hidden="true" style="color: #87CEEB;"></i> Marina Bay</h4>
+            <p class="card-text">Singapore</p>
+            <p class="card-text">5 days - 4 nights</p>
+            <p><h4><i class="fa fa-usd" aria-hidden="true"></i> 2999</h4> per person</p>
+            <p>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+              <i class="fa fa-star" aria-hidden="true" style="color: #87CEEB;"></i>
+            </p>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" onclick="marina()" class="btn text-light" style="background-color: #87CEEB;">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for booking form -->
+  <div class="modal fade" id="myModal" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-light" style="background-color: #005477;">
+          <h5 class="modal-title" id="myModalLabel"><i class="fa fa-suitcase"></i> Booking Form</h5>
+          <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <div class="mb-3">
+              <label for="name" class="form-label"><i class="fa fa-user"></i> Name:</label>
+              <input type="text" class="form-control" id="name1" placeholder="Enter name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"><i class="fa fa-envelope"></i> E-mail:</label>
+              <input type="email" class="form-control" id="email1" placeholder="Enter e-mail id" required>
+            </div>
+            <div class="mb-3">
+              <label for="guests" class="form-label"><i class="fa fa-users"></i> Number of Guests:</label>
+              <input type="number" class="form-control" id="guests" placeholder="Number of guests" required>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label"><i class="fa fa-calendar"></i> Date:</label>
+              <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="mb-3">
+              <label for="place" class="form-label"><i class="fa fa-map-marker"></i> Destination:</label>
+              <input type="text" class="form-control" id="destination" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn text-light" style="background-color: #005477;" onclick="btn()">Submit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Services -->
+  <div id="services" class="container-fluid p-5 text-center">
+    <h1 id="book-now">
+      <span style="background-color: #005477; color: #87CEEB;">S</span>
+      <span style="background-color: #87CEEB; color: #005477;">E</span>
+      <span style="background-color: #005477; color: #87CEEB;">R</span>
+      <span style="background-color: #87CEEB; color: #005477;">V</span>
+      <span style="background-color: #005477; color: #87CEEB;">I</span>
+      <span style="background-color: #87CEEB; color: #005477;">C</span>
+      <span style="background-color: #005477; color: #87CEEB;">E</span>
+      <span style="background-color: #87CEEB; color: #005477;">S</span>
+    </h1>
+    <h4>What we offer</h4>
+    <br><br>
+    <div class="row g-3 slideanim">
+      <div data-aos="fade-right" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-bed" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Affordable Hotel</h4>
+          <p>Affordable hotel options offering comfort, convenience, and great service for budget-conscious travelers.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-cutlery" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Food and Drinks</h4>
+          <p>Enjoy a variety of delicious food and refreshing drinks, perfect for satisfying your cravings during your travels.</p>
+        </div>
+      </div>
+      <div data-aos="fade-left" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-bullhorn" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Safety Guide</h4>
+          <p>Stay informed and secure with our comprehensive safety guide, ensuring a safe and worry-free travel experience.</p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="row g-3 slideanim">
+      <div data-aos="fade-right" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-globe" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Around the World</h4>
+          <p>Embark on a journey around the world with our curated travel packages, offering unforgettable experiences at iconic destinations.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-plane" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Faster Travel</h4>
+          <p>Experience faster travel with our streamlined services, ensuring you reach your destination quickly and comfortably.</p>
+        </div>
+      </div>
+      <div data-aos="fade-left" class="col-sm-4 card shadow">
+        <div class="card-body">
+          <i class="fa fa-bicycle" style="font-size: 5rem; color: #005477;" aria-hidden="true"></i>
+          <h4>Adventure</h4>
+          <p>Unleash your thrill-seeking spirit with our exciting adventure packages, offering unforgettable experiences in breathtaking destinations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Gallery -->
+  <div id="gallery" class="container-fluid p-5 text-center" style="background-color: #005477;">
+  <h1 id="book-now">
+    <span style="background-color: #87CEEB; color: #005477;">G</span>
+    <span style="background-color: #87CEEB; color: #005477;">A</span>
+    <span style="background-color: #87CEEB; color: #005477;">L</span>
+    <span style="background-color: #87CEEB; color: #005477;">L</span>
+    <span style="background-color: #87CEEB; color: #005477;">E</span>
+    <span style="background-color: #87CEEB; color: #005477;">R</span>
+    <span style="background-color: #87CEEB; color: #005477;">Y</span>
+  </h1>
+  <br><br>
+  <div class="row g-3 slideanim">
+    <div data-aos="fade-left" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g1.jpeg" alt="g1" class="img-fluid img-shadow">
+    </div>
+    <div data-aos="fade-up" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g2.jpeg" alt="g2" class="img-fluid img-shadow">
+    </div>
+    <div data-aos="fade-right" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g3.webp" alt="g3" class="img-fluid img-shadow">
+    </div>
+  </div>
+  <br><br>
+  <div class="row g-3 slideanim">
+    <div data-aos="fade-left" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g4.jpeg" alt="g4" class="img-fluid img-shadow">
+    </div>
+    <div data-aos="fade-up" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g5.jpeg" alt="g5" class="img-fluid img-shadow">
+    </div>
+    <div data-aos="fade-right" class="col-lg-4 col-md-4 col-sm-12">
+      <img src="g6.jpeg" alt="g6" class="img-fluid img-shadow">
+    </div>
+  </div>
+</div>
+
+  <!-- Reviews -->
+  <div id="reviews" class="container-fluid p-5 text-center" style="background-color: #87CEEB;">
+    <h1 id="book-now">
+      <span style="background-color: #005477; color: #87CEEB;">R</span>
+      <span style="background-color: #005477; color: #87CEEB;">E</span>
+      <span style="background-color: #005477; color: #87CEEB;">V</span>
+      <span style="background-color: #005477; color: #87CEEB;">I</span>
+      <span style="background-color: #005477; color: #87CEEB;">E</span>
+      <span style="background-color: #005477; color: #87CEEB;">W</span>
+      <span style="background-color: #005477; color: #87CEEB;">S</span>
+    </h1>
+    <br><br>
+    
+    <!-- Carousel -->
+    <div id="demo1" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="3"></button>
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="4"></button>
+        <button type="button" style="background-color: #005477; height: 10px; width: 10px; border-radius: 50%;" data-bs-target="#demo1" data-bs-slide-to="5"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r1.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>Emily R.</h5>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Seamless trip to Japan. Excellent itinerary, superb customer service. Would definitely book with them again!"</p>      
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r2.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>John D.</h5>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Fantastic experience! They crafted the perfect honeymoon for us—flawless itinerary, great service. Highly recommend!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r3.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>Sarah M.</h5>
+                <p>⭐⭐⭐⭐</p>
+                <p>"Great family vacation to Europe. Everything was booked well, but had a minor issue with a hotel. Still, I’d use them again!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r4.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>Laura K.</h5>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Perfect South America trip—flights, transfers, and tours were all well-organized. Will book again for future travels!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r6.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>Eddie T.</h5>
+                <p>⭐⭐⭐</p>
+                <p>"Good trip overall, but communication could have been better. Still, enjoyed the vacation once everything was sorted."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; margin: 10px;">
+              <div class="card-body text-center">
+                <img src="r5.jpg" height="100" width="100" class="rounded-circle mb-3"><br>
+                <h5>David P.</h5>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Best travel agency I’ve used. They tailored the trip exactly to my needs and offered great 24/7 support. Highly recommend!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" style="background-color: #005477;"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" style="background-color: #005477;"></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Contact -->
+  <div id="contact" class="container-fluid text-center p-5">
+    <h1 id="book-now">
+      <span style="background-color: #005477; color: #87CEEB;">C</span>
+      <span style="background-color: #87CEEB; color: #005477;">O</span>
+      <span style="background-color: #005477; color: #87CEEB;">N</span>
+      <span style="background-color: #87CEEB; color: #005477;">T</span>
+      <span style="background-color: #005477; color: #87CEEB;">A</span>
+      <span style="background-color: #87CEEB; color: #005477;">C</span>
+      <span style="background-color: #005477; color: #87CEEB;">T</span>
+    </h1>
+    <br>
+    <div class="row">
+      <div data-aos="fade-right" class="col-sm-6 form-group g-3" style="padding-top: 40px;">
+            <img src="w.jpg" height="250" width="250" class="rounded">
+      </div>
+      <div data-aos="fade-left" class="col-sm-6 form-group g-3">
+        <div class="card shadow-lg"> <!-- Bootstrap shadow-lg for a large shadow effect -->
+          <div class="card-body">
+            <form>
+            <input class="form-control mb-3" id="name" name="name" placeholder="Name" type="text" required="">
+            <input class="form-control mb-3" id="email" name="email" placeholder="Email" type="email" required="">
+            <textarea class="form-control mb-3" id="message" name="message" placeholder="Message" rows="5" required=""></textarea>
+            <button class="btn text-light" style="background-color: #005477;" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Column 1: About Us -->
+        <div class="col-md-4">
+          <h1><span style="color: #005477;">Globe</span><span style="color: #87CEEB;">Trek</span></h1>
+        </div>
+        
+        <!-- Footer Column 2: Useful Links -->
+        <div class="col-md-4">
+          <h5>Useful Links</h5>
+          <p>
+            <a href="#" class="btn text-white"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <a href="#" class="btn text-white"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <a href="#" class="btn text-white"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </p>
+        </div>
+        
+        <!-- Footer Column 3: Contact Info -->
+        <div class="col-md-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-map-marker"></i> 123 Street, City, Country</li>
+            <li><i class="fa fa-phone"></i> +123 456 7890</li>
+            <li><i class="fa fa-envelope"></i> email@example.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="text-center mt-4">
+        <p class="mb-0">© 2024 Your Company. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <a id="scrollToTopBtn" type="button" class="btn btn-secondary scroll-btn" onclick="scrollToTop()"><i class="fa fa-chevron-circle-up"></i></a>
+
+<script src="function.js"></script>
+</body>
+</html>
