@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeTrek / Travel and Tour</title>
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+
+  <style>
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #004466;
+    }
+
+    .form-control {
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+    }
+
+    a {
+      text-decoration: none;
+      color: #005477;
+    }
+
+    a:hover {
+      color: #004466;
+    }
+
+    .text-center {
+      margin-bottom: 15px;
+    }
+
+    .signup-card {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Toggler button (always visible) -->
+      <a href="index.html" class="navbar-toggler" type="button">
+        <span class="fa fa-arrow-left"></span>
+      </a>
+
+      <!-- Navbar brand (Logo) centered -->
+      <a class="navbar-brand mx-auto" href="#">
+        <b style="color: #005477;">Globe</b><b>Trek</b>
+      </a>
+
+      <!-- Help link on the right -->
+      <a class="navbar-brand" href="#" style="color: #005477;">Help</a>
+    </div>
+  </nav>
+
+  <!-- Background Image -->
+  <img class="background-video" src="tour.jpeg" alt="destination travel">
+
+  <!-- Travel and Tour Booking Card -->
+  <div class="card shadow-lg rounded-lg signin-card">
+    <div class="card-body">
+      <h2 class="text-center" style="color: #005477;">Travel & Tour Booking Form</h2>
+      <hr>
+      <form id="bookingForm">
+                <!-- Personal Details -->
+                <h4 class="text-center" style="color: #005477;">Personal Details</h4>
+      <div class="text-center mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" required placeholder="Enter your full name">
+      </div>
+      <div class="text-center mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+      </div>
+      <div class="text-center mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phone" required placeholder="Enter your phone number">
+      </div>
+        <hr>    
+                <!-- Travel Details -->
+        <h4 class="text-center" style="color: #005477;">Tour Details</h4>
+      <div class="text-center mb-3">
+                    <label for="destination" class="form-label">Destination:</label>
+                    <input type="text" class="form-control" id="destination" name="destination" placeholder="Enter your destination" required>
+                </div>
+                <div class="text-center mb-3">
+                    <label for="numTravelers" class="form-label">Number of Travelers:</label>
+                    <input type="number" class="form-control" id="numTravelers" name="numTravelers" placeholder="Enter number of travelers" required min="1" max="20">
+                </div>
+                <div class="text-center mb-3">
+                    <label for="tourPackage" class="form-label">Tour Package:</label>
+                    <select class="form-select" id="tourPackage" name="tourPackage" required>
+                        <option value="">Select Package</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Luxury">Luxury</option>
+                        <option value="Family">Family</option>
+                        <option value="Honeymoon">Honeymoon</option>
+                    </select>
+                </div>
+        <div class="text-center mb-3">
+        <label for="departureDate" class="form-label">Departure Date</label>
+        <input type="date" class="form-control" id="departureDate" required>
+      </div>
+      <div class="text-center mb-3">
+        <label for="returnDate" class="form-label">Return Date</label>
+        <input type="date" class="form-control" id="returnDate" required>
+      </div>
+        <hr>
+                <!-- Additional Information Section -->
+      <h4 class="text-center" style="color: #005477;">Additional Information</h4>
+      <div class="text-center mb-3">
+        <label for="specialRequests" class="form-label">Special Requests</label>
+        <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests or notes"></textarea>
+      </div>
+                <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn text-light text-center" style="background-color: #005477;">Submit Booking</button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+  // JavaScript for Form Validation and Submission
+document.getElementById('bookingForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Collect form data
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+  let phone = document.getElementById('phone').value;
+  let destination = document.getElementById('destination').value;
+  let numTravelers = document.getElementById('numTravelers').value;
+  let tourPackage = document.getElementById('tourPackage').value;
+  let departureDate = document.getElementById('departureDate').value;
+  let returnDate = document.getElementById('returnDate').value;
+  let specialRequests = document.getElementById('specialRequests').value;
+
+  // Validate form data
+  if (!name || !email || !phone || !destination || !numTravelers || !tourPackage || !departureDate || !returnDate) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  // Submit form data (in this case, we are just displaying the data in an alert)
+  let confirmationMessage =`
+  Name: ${name}
+  Email: ${email}
+  Phone: ${phone}
+  Destination: ${destination}
+  Number of Traveler(s): ${numTravelers}
+  Tour Package: ${tourPackage}
+  Departure Date: ${departureDate}
+  Return Date: ${returnDate}
+  Special Requests: ${specialRequests}`;
+  
+  let isConfirmed = confirm(`Please confirm your booking details:\n\n${confirmationMessage}`);
+
+  // If confirmed, show confirmation alert
+  if (isConfirmed) {
+    alert("Your booking is confirmed!");
+    window.location.href = "index.html";
+  }else{
+    alert("Your booking is failed!");
+    location.reload();
+  }
+  
+});
+
+  </script>
+</body>
+</html>
