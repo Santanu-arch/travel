@@ -149,35 +149,43 @@
           <div class="mb-3">
             <label class="form-label" for="leaving">Leaving:</label>
             <input type="date" class="form-control" id="leaving" name="leaving" style="border-radius: 10px;" required>
-          </div>
-          <div class="d-flex justify-content-between">
-            <button type="reset" class="btn btn-light" style="color: #005477; border-radius: 5px; border: 1px solid #005477; padding: 8px 16px;">Reset</button>
-            <button type="submit" class="btn text-light" style="background-color: #005477; border-radius: 5px; padding: 8px 16px;">Submit</button>
-          </div>
-        </form>
+<div data-aos="fade-right" class="col-md-6 d-flex justify-content-center align-items-center">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px; border-radius: 15px; border: 2px solid #005477; overflow: hidden;">
+    <div class="card-body p-4" style="background-color: #f9f9f9;">
+      <h4 class="card-title text-center mb-4" style="color: #005477;">Book Your Travel Essentials</h4>
+      <div class="row g-4 p-2 text-center"> <!-- Added g-4 here to add gap between columns -->
+        <div class="col-md-6">
+          <a href="tour.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Tour</h6>
+        </div>
+        <div class="col-md-6">
+          <a href="hotel.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-building fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Hotel</h6>
+        </div>
+      </div>
+      <div class="row g-4 p-2 text-center"> <!-- Added g-4 here to add gap between columns -->
+        <div class="col-md-6">
+          <a href="train.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-train fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Train</h6>
+        </div>
+        <div class="col-md-6">
+          <a href="plane.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 2px solid #005477; padding: 8px 16px;">
+            <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
+          </a>
+          <h6 style="color: #005477;">Plane</h6>
         </div>
       </div>
     </div>
   </div>
-    <div class="d-flex justify-content-center align-items-center p-3 mt-4">
-         <div class="card shadow-lg" style="width: 100%; max-width: 400px; border-radius: 15px; border: 2px solid #005477; overflow: hidden;">
-  <div class="card-body row text-center">
-      <div class="col">
-          <a href="train.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 1px solid #005477; padding: 8px 16px;"><i class="fa fa-train" aria-hidden="true"></i></a>
-        <h6 style="color: #005477;">Train</h6>
-      </div>
-      <div class="col">
-          <a href="plane.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 1px solid #005477; padding: 8px 16px;"><i class="fa fa-plane" aria-hidden="true"></i></a>
-          <h6 style="color: #005477;">Plane</h6>
-      </div>
-      <div class="col">
-          <a href="hotel.html" class="btn rounded-circle" style="color: #005477; border-radius: 5px; border: 1px solid #005477; padding: 8px 16px;"><i class="fa fa-building" aria-hidden="true"></i></a>
-          <h6 style="color: #005477;">Hotel</h6>
-      </div>
-      </div>
 </div>
-  </div>   
-</div>
+    </div>
+  </div>
 
   <!-- Package -->
   <div class="container-fluid p-5" style="background-color: #005477;" id="booking">
@@ -665,36 +673,6 @@
       }
     };
     
-function book(event) {
-  event.preventDefault();
- 
-  const name = document.getElementById('namef').value;
-  const email = document.getElementById('emailf').value;
-  const place = document.getElementById('place').value;
-  const num = document.getElementById('num').value;
-  const arrivals = document.getElementById('arrivals').value;
-  const leaving = document.getElementById('leaving').value;
-
-  const confirmationMessage = `
-    Name: ${name}
-    Email: ${email}
-    Place: ${place}
-    Number of Guests: ${num}
-    Arrival Date: ${arrivals}
-    Leaving Date: ${leaving}
-  `;
-
-  const isConfirmed = confirm(`Please confirm your booking details:\n\n${confirmationMessage}`);
-
-  if (isConfirmed) {
-    alert("Your booking is confirmed!");
-    location.reload();
-  }else{
-    alert("Your booking is failed!");
-    location.reload();
-  }
-}
-
 function btn() {
   const form = document.getElementById("bookingForm");
 
@@ -724,39 +702,7 @@ function btn() {
     case "Santorini, Greece":
       costPerPerson = 2659;
       duration = "5 days - 4 nights";
-      break;
-    case "Sydney, Australia":
-      costPerPerson = 2799;
-      duration = "6 days - 5 nights";
-      break;
-    case "Tokyo, Japan":
-      costPerPerson = 2499;
-      duration = "7 days - 6 nights";
-      break;
-    case "Marina Bay, Singapore":
-      costPerPerson = 2999;
-      duration = "5 days - 4 nights";
-      break;
-    default:
-      alert("Invalid destination.");
-      return;
-  }
-
-  const totalCost = costPerPerson * guests;
-
-  const confirmationMessage = `
-    Booking Details:
-    - Name: ${name}
-    - Email: ${email}
-    - Number of Guests: ${guests}
-    - Date: ${date}
-    - Destination: ${destination}
-    - Duration: ${duration}
-    - Cost per Person: $${costPerPerson}
-    - Total Cost: $${totalCost}
-  `;
-  
-  const confirmation = confirm(confirmationMessage + "\n\nDo you want to confirm your booking?");
+      break;rmation = confirm(confirmationMessage + "\n\nDo you want to confirm your booking?");
   
   if (confirmation) {
     alert("Your booking is confirmed!");
