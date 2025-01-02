@@ -87,7 +87,7 @@ function btn() {
   
   // If confirmed, show the success message and reload
   if (confirmation) {
-    alert("Your booking is confirmed!");
+    alert("Your booking is submitted!");
     location.reload();
   } else {
     alert("Your booking is cancelled!");
