@@ -1,0 +1,188 @@
+#home, #booking, #services, #gallery, #contact{
+  overflow: hidden;
+}
+
+/* navbar */
+.nav-link:hover{
+  color: #005477;
+}
+.nav-link::after{
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #005477;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+.nav-link:hover::after{
+  transform: scale(1);
+}
+
+/* Home */
+.carousel-item video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    .overlay-content {
+      position: absolute;
+      font-size: 34px;
+      top: 50%;
+      left: 5%;  /* Align the content to the left */
+      transform: translateY(-50%);
+      z-index: 1;
+      color: white;
+      text-align: left;  /* Align text to the left */
+      max-width: 80%; /* Prevent overflow by limiting the width */
+      padding-left: 20px; /* Add padding for some space on the left */
+    }
+
+    .overlay-content h3 {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 44px;
+      margin-bottom: 20px;
+    }
+
+    .overlay-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .learn-btn, .book-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #005477;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-right: 10px; /* Space between buttons */
+    }
+
+    .learn-btn:hover, .book-btn:hover {
+      color: white;
+      background-color: #003d56;
+    }
+
+    .learn-btn {
+      border: 2px solid #005477;
+    }
+    /* Book Now button styles */
+    .book-btn {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+
+    .book-btn:hover {
+      background-color: #005477;
+      color: white;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .overlay-content h3 {
+        font-size: 24px;
+      }
+
+      .overlay-content p {
+        font-size: 14px;
+      }
+
+      .learn-btn, .book-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .overlay-content {
+        left: 3%; /* Reduce the left margin on smaller screens */
+        max-width: 90%; /* Allow more space on smaller screens */
+      }
+    }
+
+#book-now {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    #book-now span {
+      padding: 10px;
+      margin: 5px;
+      
+      border-radius: 15%;
+      font-size: 2rem; /* Default font size for larger screens */
+      display: inline-block;
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      #book-now span {
+        padding: 5px;
+        font-size: 1.1rem; /* Smaller font size on mobile */
+      }
+    }
+
+    /* For larger screens (PCs) */
+    @media (min-width: 601px) {
+      #book-now span {
+        padding: 10px;
+        font-size: 2rem; /* Larger font size on desktop */
+      }
+    }
+ .img-shadow {
+    border: 5px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .img-shadow:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+/* Hover effect for the cards */
+#package {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When hovering over the card */
+#package:hover {
+  transform: translateY(-10px); /* Move the card slightly upwards */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance the shadow effect */
+}
+
+/* Optional: Change the button color on hover */
+#package .btn:hover {
+  background-color: #005477; /* Change button background color when hovering */
+  color: #fff; /* Make text white */
+}
+
+.scroll-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .scroll-btn:hover {
+        background-color: gray;
+    }
+
+.collapsible-content {
+      display: none;
+    }
