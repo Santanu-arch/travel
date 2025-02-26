@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeTrek/Plane Ticket</title>
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+
+  <style>
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
+    }
+
+    .card {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    #plane .text-center h4 {
+      font-size: 1.2rem;
+    }
+
+    .col-md-6 {
+      padding: 15px;
+    }
+
+    .form-control {
+      font-size: 1rem;
+      padding: 12px;
+    }
+
+    .btn {
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #004466;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 767px) {
+      .card {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .form-control {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px;
+      }
+    }
+  
+    /* Large Screen Fix */
+@media (min-width: 1200px) {
+  .card {
+    margin: 50px auto;
+  }
+
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-toggler" type="button">
+        <span class="fa fa-arrow-left"></span>
+      </a>
+
+      <a class="navbar-brand mx-auto" href="#">
+        <b style="color: #005477;">Globe</b><b>Trek</b>
+      </a>
+
+      <a class="navbar-brand" href="#" style="color: #005477;"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help</a>
+    </div>
+  </nav>
+
+  <!-- Background Image -->
+  <img class="background-image" src="plane.jpeg" alt="plane">
+
+  <!-- Plane Ticket Form -->
+  <div class="card shadow-lg rounded-lg" id="plane">
+    <div class="card-body">
+      <h1 class="text-center" style="color: #005477;"><b>Plane Ticket Booking</b></h1>
+      <form id="ticketForm" onsubmit="return validateForm()">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Booking Details -->
+            <h4 class="text-center" style="color: #005477;">Booking Details</h4>
+            <div class="text-start mb-3">
+              <label for="flightType" class="form-label">Flight Type</label>
+              <select class="form-select" id="flightType" name="flightType" required onchange="adjustFormFields()">
+                <option value="">Select Flight Type</option>
+                <option value="One-way">One-way</option>
+                <option value="Round Trip">Round Trip</option>
+                <option value="Multi-city">Multi-city</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="classService" class="form-label">Class of Service</label>
+              <select class="form-select" id="classService" name="classService" required>
+                <option value="">Select Flight Type</option>
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+                <option value="First Class">First Class</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="numberOfPassengers" class="form-label">Number of Passengers</label>
+              <input type="number" class="form-control" id="numberOfPassengers" name="numberOfPassengers" placeholder="Enter number of passengers" required min="1" max="10">
+            </div>        
+            <div class="text-start mb-3">
+              <label for="preferredFlightTime" class="form-label">Preferred Flight Time</label>
+              <select class="form-select" id="preferredFlightTime" name="preferredFlightTime">
+                <option value="">Select Preferred Time</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+              </select>
+            </div>
+            <div class="text-start mb-3 mt-3">
+              <label for="departureAirport" class="form-label">Departure Airport</label>
+              <input type="text" class="form-control" id="departureAirport" name="departureAirport" placeholder="Enter departure airport" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="destinationAirport" class="form-label">Destination Airport</label>
+              <input type="text" class="form-control" id="destinationAirport" name="destinationAirport" placeholder="Enter destination airport" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="dateOfFlight" class="form-label">Date of Flight</label>
+              <input type="date" class="form-control" id="dateOfFlight" name="dateOfFlight" required>
+            </div>          
+            
+            <!-- Return Date (for Round Trip) -->
+            <div class="text-start mb-3" id="returnDateDiv" style="display: none;">
+              <label for="returnDate" class="form-label">Return Date</label>
+              <input type="date" class="form-control" id="returnDate" name="returnDate">
+            </div>
+
+            <!-- Multi-city Fields (for Multi-city flight) -->
+            <div id="multiCityFields" style="display: none;">
+              <div class="text-start mb-3">
+                <label for="departureCity1" class="form-label">Departure City 1</label>
+                <input type="text" class="form-control" id="departureCity1" name="departureCity1" placeholder="Enter departure city" required>
+              </div>
+              <div class="text-start mb-3">
+                <label for="destinationCity1" class="form-label">Destination City 1</label>
+                <input type="text" class="form-control" id="destinationCity1" name="destinationCity1" placeholder="Enter destination city" required>
+              </div>
+              <div class="text-start mb-3">
+                <label for="departureDate1" class="form-label">Departure Date 1</label>
+                <input type="date" class="form-control" id="departureDate1" name="departureDate1" required>
+              </div>
+              <div class="text-start mb-3">
+                <label for="returnDate1" class="form-label">Return Date 1</label>
+                <input type="date" class="form-control" id="returnDate1" name="returnDate1">
+              </div>
+            </div>
+            <div class="text-start mb-3">
+              <label for="specialRequests" class="form-label">Special Requests</label>
+              <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests or notes"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!-- Personal Details -->
+            <h4 class="text-center" style="color: #005477;">Personal Details</h4>
+            <div class="text-start mb-3 mt-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter name" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="passportNumber" class="form-label">Passport Number</label>
+              <input type="text" class="form-control" id="passportNumber" name="passportNumber" placeholder="Enter Passport Number" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="nationality" class="form-label">Nationality</label>
+              <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Enter nationality" required>
+            </div>
+            <h4 class="text-center" style="color: #005477;">Payment Details</h4>
+            <div class="text-start mb-3">
+              <label for="paymentMethod" class="form-label">Payment Method</label>
+              <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="billingAddress" class="form-label">Billing Address</label>
+              <input type="text" class="form-control" id="billingAddress" name="billingAddress" placeholder="Enter billing address" required>
+            </div>
+            <h4 class="text-center" style="color: #005477;">Promo Code</h4>
+            <div class="text-start mb-3">
+              <input type="text" class="form-control" id="promoCode" name="promoCode" placeholder="Enter promo code" />
+            </div>
+          </div>
+        </div>     
+        <div class="form-check mt-4 mb-4">
+          <input class="form-check-input" type="checkbox" id="termsConditions" name="termsConditions" required>
+          <label class="form-check-label" for="termsConditions">
+            I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.
+          </label>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between">
+          <button type="reset" class="btn text-light" style="background-color: #005477; width: 48%;">Reset</button>
+          <button type="submit" class="btn text-light" style="background-color: #005477; width: 48%;">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div id="popup" class="alert alert-success" style="display: none;"></div>
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="text-center">
+        <p class="mb-0">© 2024-2028 GlobeTrek. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    function adjustFormFields() {
+      let flightType = document.getElementById('flightType').value;
+      let returnDateDiv = document.getElementById('returnDateDiv');
+      let multiCityFields = document.getElementById('multiCityFields');
+      
+      if (flightType === "Round Trip") {
+        returnDateDiv.style.display = "block";
+        multiCityFields.style.display = "none";
+      } else if (flightType === "Multi-city") {
+        returnDateDiv.style.display = "none";
+        multiCityFields.style.display = "block";
+      } else {
+        returnDateDiv.style.display = "none";
+        multiCityFields.style.display = "none";
+      }
+    }
+
+    function validateForm() {
+  let fullName = document.getElementById('fullName').value;
+  let email = document.getElementById('email').value;
+  let phone = document.getElementById('phone').value;
+  let passportNumber = document.getElementById('passportNumber').value;
+  let nationality = document.getElementById('nationality').value;
+  let paymentMethod = document.getElementById('paymentMethod').value;
+  let billingAddress = document.getElementById('billingAddress').value;
+  let flightType = document.getElementById('flightType').value;
+  let departureAirport = document.getElementById('departureAirport').value;
+  let destinationAirport = document.getElementById('destinationAirport').value;
+  let dateOfFlight = document.getElementById('dateOfFlight').value;
+  let numberOfPassengers = document.getElementById('numberOfPassengers').value;
+  let returnDate = document.getElementById('returnDate').value;
+  let departureCity1 = document.getElementById('departureCity1') ? document.getElementById('departureCity1').value : "";
+  let destinationCity1 = document.getElementById('destinationCity1') ? document.getElementById('destinationCity1').value : "";
+  let departureDate1 = document.getElementById('departureDate1') ? document.getElementById('departureDate1').value : "";
+  let returnDate1 = document.getElementById('returnDate1') ? document.getElementById('returnDate1').value : "";
+  let specialRequests = document.getElementById('specialRequests').value;
+  let termsConditions = document.getElementById('termsConditions').checked;
+  let promoCode = document.getElementById('promoCode').value;  // Get promo code
+      
+      // Promo Code Validation
+      let validPromoCodes = ['DISCOUNT10', 'SUMMER2025'];  // List of valid promo codes
+      if (promoCode && !validPromoCodes.includes(promoCode.toUpperCase())) {
+        alert("Invalid promo code.");
+        return false;
+      }
+      
+  // Basic Field Validation
+  if (fullName === "" || email === "" || phone === "" || passportNumber === "" || nationality === "" || paymentMethod === "" || billingAddress === "" || departureAirport === "" || destinationAirport === "" || dateOfFlight === "" || numberOfPassengers === "") {
+    alert("Please fill out all fields.");
+    return false;
+  }
+
+  // Round Trip Return Date Validation
+  if (flightType === "Round Trip" && returnDate === "") {
+    alert("Please select a return date for round trip.");
+    return false;
+  }
+
+  // Multi-City Validation
+  if (flightType === "Multi-city") {
+    if (departureCity1 === "" || destinationCity1 === "" || departureDate1 === "") {
+      alert("Please fill in all fields for Multi-city flight.");
+      return false;
+    }
+  }
+      
+      // Terms and Conditions Validation
+    if (!termsConditions) {
+      alert("You must agree to the Terms and Conditions.");
+      return false;
+    }
+
+  // Confirm Booking Details
+  let bookingDetails = `
+    Departure: ${departureAirport}
+    Destination: ${destinationAirport}
+    Flight Type: ${flightType}
+    Date: ${dateOfFlight}
+    Passengers: ${numberOfPassengers}
+  `;
+
+  if (flightType === "Round Trip") {
+    bookingDetails += `\nReturn Date: ${returnDate}`;
+  } else if (flightType === "Multi-city") {
+    bookingDetails += `
+      \nDeparture City 1: ${departureCity1}
+      \nDestination City 1: ${destinationCity1}
+      \nDeparture Date 1: ${departureDate1}
+      \nReturn Date 1: ${returnDate1}
+    `;
+  }
+
+  let personalDetails = `
+    Full Name: ${fullName}
+    Email: ${email}
+    Phone: ${phone}
+    Passport Number: ${passportNumber}
+    Nationality: ${nationality}
+    Payment Method: ${paymentMethod}
+    Billing Address: ${billingAddress}
+  `;
+
+  let confirmation;
+  
+  if(specialRequests === "") {
+    confirmation = confirm(`Please confirm your booking details:\n\nBooking Details:\n${bookingDetails}\n\nPersonal Details:\n${personalDetails}`);
+  } else {
+    confirmation = confirm(`Please confirm your booking details:\n\nBooking Details:\n${bookingDetails}\n\nPersonal Details:\n${personalDetails}\n\nSpecial Requests:\n${specialRequests}`);
+  }  
+
+  if (confirmation) {
+    const popup = document.getElementById("popup");
+
+      localStorage.setItem("popupMessage", "Your plane ticket has been successfully booked! We’ll send you all the details and next steps via email shortly. Safe travels ahead!");
+
+      setTimeout(function() {
+        popup.style.display = "none";
+        window.location.href = 'index.html';
+      }, 500);
+  }
+
+  return false;
+}
+
+  </script>
+</body>
+</html>

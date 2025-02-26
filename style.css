@@ -1,0 +1,657 @@
+#home, #booking, #services, #gallery, #contact, #reviews{
+  overflow: hidden;
+}
+
+#content {
+      display: none;
+    }
+  
+    #loader{
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  /* navbar */
+
+    .nav-link:hover{
+      color: #005477;
+    }
+    .nav-link::after{
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: #005477;
+      transform: scale(0);
+      transition: transform 0.4s ease;
+    }
+    .nav-link:hover::after{
+      transform: scale(1);
+    }
+
+  /* Home */
+
+    #home .carousel-item video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    #home .overlay-content {
+      position: absolute;
+      font-size: 34px;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      z-index: 1;
+      color: white;
+      text-align: left;
+      max-width: 80%;
+      padding-left: 20px;
+    }
+
+    #home .overlay-content h3 {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 44px;
+      margin-bottom: 20px;
+    }
+
+    #home .overlay-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    #home .learn-btn, #home .book-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #005477;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    #home .learn-btn:hover, #home .book-btn:hover {
+      color: white;
+      background-color: #003d56;
+    }
+
+    #home .learn-btn {
+      border: 2px solid #005477;
+    }
+    
+    #home .book-btn {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+
+    #home .book-btn:hover {
+      background-color: #005477;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      #home .overlay-content h3 {
+        font-size: 24px;
+      }
+
+      #home .overlay-content p {
+        font-size: 14px;
+      }
+
+      #home .learn-btn, #home .book-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      #home .overlay-content {
+        left: 3%;
+        max-width: 90%;
+      }
+    }
+
+  /* services */
+
+    #services {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    #services h3 {
+      font-size: 3rem;
+      color: #005477;
+      margin-bottom: 1rem;
+    }
+
+    #services p {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: 300;
+      margin-top: 20px;
+    }
+
+    #services .card {
+      background-color: #005477;
+      margin: 10px;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+
+    #services .card:hover {
+      transform: translateY(-10px);
+    }
+
+    #services .card-body {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    #services .card i {
+      font-size: 3rem;
+      color: white;
+    }
+
+    #services .card h4 {
+      font-size: 1.2rem;
+      color: white;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 767px) {
+      #services h3 {
+        font-size: 1.8rem;
+      }
+
+      #services p {
+        font-size: 1rem;
+      }
+
+      #services .card i {
+        font-size: 1.8rem;
+        margin-top: 1rem;
+      }
+
+      #services .card h4 {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+      
+      .col-12.col-sm-4 {
+        margin-bottom: 1rem;
+        padding: 0;
+      }
+
+      .col-12.col-sm-4 .card {
+        width: 130px;
+        height: 130px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .col-12.col-sm-4 .card-body {
+        padding: 0;
+      }
+
+      .col-12.col-sm-4 .card i {
+        font-size: 2rem;
+      }
+
+      .col-12.col-sm-4 .card h4 {
+        font-size: 0.8rem;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-12.col-sm-4 {
+        flex: 0 0 33.33%;
+        padding: 0.5rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #services .card {
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      #services .card:hover {
+        transform: scale(1.05);
+      }
+    }
+
+  /* booking */
+
+      #booking {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    #booking h3 {
+      font-size: 3rem;
+      color: #005477;
+      margin-bottom: 1rem;
+    }
+
+    #booking p {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: 300;
+      margin-top: 20px;
+    }
+
+    #booking #form .card {
+      border: 2px solid #005477;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    #booking #form .card-body {
+      background-color: #f9f9f9;
+      padding: 2rem;
+    }
+
+    #booking #form .card-title {
+      color: #005477;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    #booking #form .btn {
+      background-color: transparent;
+      border-radius: 50%;
+      border: 2px solid #005477;
+      padding: 16px;
+      font-size: 1.5rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    #booking #form .btn i {
+      color: #005477;
+      font-size: 2rem;
+    }
+
+    #booking #form h6 {
+      color: #005477;
+      
+    }
+
+    #booking #main {
+      border: 8px solid white;
+      height: 100%;
+      max-height: 290px;
+      width: 100%; 
+      max-width: 290px;
+    }
+
+    #booking .col-md-6 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #booking .card-body .row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; /* Allow wrap for smaller screens */
+    }
+
+    #booking .card-body .col-md-3, .card-body .col-6 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 767px) {
+      #booking h3 {
+        font-size: 1.8rem;
+      }
+
+      #booking p {
+        font-size: 1rem;
+      }
+      
+      #booking #animation {
+        width: 150px;
+        height: 150px;
+      }
+
+      #booking #form .btn {
+        width: 50px;
+        height: 50px;
+        padding: 4px;
+        margin-bottom: 0.5rem;
+      }
+
+      #booking #form .btn i {
+        font-size: 1.5rem;
+      }
+
+      #booking #form h6 {
+        font-size: 0.8rem;
+      }
+    }
+
+  /* packages */
+      #packages {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    #packages h3 {
+      font-size: 3rem;
+      color: #005477;
+      margin-bottom: 1rem;
+    }
+
+    #packages #p {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: 300;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 767px) {
+      #packages h3 {
+        font-size: 1.8rem;
+      }
+
+      #packages #p {
+        font-size: 1rem;
+      }
+      
+      #packages p {
+        font-size: 0.8rem;
+      }
+      
+      #packages h5{
+        font-size: 1rem;
+      }
+      
+      #packages ul li{
+        font-size: 0.8rem;
+      }
+    }
+
+      #rajasthan, #safari, #fiji, #japan, #everest, #hawaii, #bali, #costarica, #alaska {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #rajasthan:hover, #safari:hover, #fiji:hover, #japan:hover, #everest:hover, #hawaii:hover, #bali:hover, #costarica:hover, #alaska:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+  /* gallery */
+
+      #gallery {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      padding: 1.8rem;  
+    }
+
+    #gallery h3 {
+      font-size: 3rem;
+      color: #005477;
+      margin-bottom: 1rem;
+    }
+
+    #gallery p {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: 300;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    #gallery img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #gallery .row {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 767px) {
+      #gallery h3 {
+        font-size: 1.8rem;
+      }
+
+      #gallery p {
+        font-size: 1rem;
+      }
+      
+      #gallery .row > #gallery .col-lg-4, #gallery .row > #gallery .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #gallery .row > #gallery .col-lg-4, #gallery .row > #gallery .col-md-4 {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+      }
+    }
+
+  /* reviews */
+
+    #reviews {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    #reviews h3 {
+      font-size: 3rem;
+      color: #005477;
+      margin-bottom: 1rem;
+    }
+
+    #reviews #p {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: 300;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #reviews .carousel-indicators button {
+      background-color: #005477;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+
+    #reviews .carousel-item .d-flex {
+      justify-content: center;
+    }
+
+    #reviews .carousel-item .d-flex {
+      justify-content: center;
+    }
+
+    #reviews .carousel-item .card {
+      width: 100%; 
+      max-width: 25rem;
+      margin: 15px;
+    }
+
+    #reviews .carousel-item .card-body {
+      text-align: center;
+      margin: 20px;
+    }
+
+    #reviews .carousel-item .card-body img {
+      height: 150px;
+      width: 150px;
+      border: 2px solid #005477;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    #reviews .carousel-item .card-body h5 { 
+      color: #005477;
+      font-size: 1.8rem;
+    }
+  
+    #reviews .carousel-item .card-body #rating {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #005477;
+    }
+  
+    #reviews .carousel-item .card-body p i { 
+      font-size: 2rem;
+      color: #005477;
+    }
+
+    #reviews .carousel-item .card-body p {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    #reviews .carousel-control-prev-icon,
+    #reviews .carousel-control-next-icon {
+      background-color: #005477;
+    }
+
+    @media (max-width: 767px) {
+      #reviews h3 {
+        font-size: 1.8rem;
+      }
+
+      #reviews #p {
+        font-size: 1rem;
+      }
+      
+      #reviews .carousel-item .card {
+        width: 100%;
+        margin: 15px 0; 
+      }
+
+      #reviews .carousel-item .card-body p {
+        font-size: 1rem;
+      }
+
+      #reviews .carousel-item .card-body h5 {
+        font-size: 1rem;
+      }
+      
+      #reviews .carousel-item .card-body #rating {
+        font-size: 0.6rem;
+      }
+
+      #reviews .carousel-item .card-body img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+  /* contact */
+
+      #contact {
+      background-color: #005477;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    #contact h3 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 1.8rem;
+    }
+
+    #contact .form-group {
+      padding: 1rem;
+    }
+
+    #contact .card {
+      border: none;
+      border-radius: 8px;
+    }
+
+    #contact .card-body {
+      padding: 2rem;
+    }
+
+    #contact .btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #005477;
+      color: white;
+    }
+
+    @media (max-width: 767px) {
+      #contact h3 {
+        font-size: 1.3rem;
+      }
+
+      #contact .btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+
+      #contact .form-group {
+        padding: 0.5rem;
+      }
+    }
+
+.scroll-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #005477;
+        color: white;
+        border: 2px solid white;
+        border-radius: 50%;
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .scroll-btn:hover {
+        background-color: #005477;
+    }
+
+.collapsible-content {
+      display: none;
+    }
+
+#popupMessage {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 20px;
+      border-radius: 5px;
+      z-index: 1000;
+    }

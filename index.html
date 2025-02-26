@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>GlobeTrek</title>
+  
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+  <script src="function.js"></script>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-primary bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <a class="navbar-brand mx-auto" href="#home"><b style="color: #005477;">Globe</b><b>Trek</b></a>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking">BOOKING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#packages">PACKAGES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">REVIEWS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <a id="signInButton" class="btn rounded-pill" style="background-color: #005477; color: white;">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="loader">        
+    <dotlottie-player src="https://lottie.host/868bcba5-5941-4ac4-8da7-1be0b850e27c/W6YbxPHXua.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>   
+  </div>
+  
+  <section id="content">
+  
+  <!-- Home -->
+  <div id="home">
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-indicators" style="display: none;">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video src="vid1.mp4" class="d-block w-100" loop autoplay muted preload="auto" poster="thum1.jpg"></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid2.mp4" class="d-block w-100" loop autoplay muted preload="auto"></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid3.mp4" class="d-block w-100" loop autoplay muted preload="auto"></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid4.mp4" class="d-block w-100" loop autoplay muted preload="auto"></video>
+      </div>
+      <div class="carousel-item">
+        <video src="vid5.mp4" class="d-block w-100" loop autoplay muted preload="auto"></video>
+      </div>
+    </div>
+
+    <div data-aos="fade" class="overlay-content position-absolute top-50 start-0 translate-middle-y text-white">
+      <h3><b>The World Is Waiting, Let’s Go</b></h3>
+      <p>Explore the world with GlobeTrek: your ultimate tour and travel guide for unforgettable adventures, expert insights, and exclusive deals.</p>
+      <a href="about.html" class="btn learn-btn rounded-pill"><b>Learn More</b></a>
+      <a href="#packages" class="btn book-btn rounded-pill"><b>Book Now</b></a>
+    </div>
+  </div>
+</div>
+  
+  <!-- Services -->
+  <div id="services" class="container-fluid">
+    <h3>YOUR ULTIMATE TRAVEL EXPERIENCE</h3>
+    <p>Explore unforgettable travel experiences, tailored just for you!</p>
+
+    <!-- Cards arranged using the Bootstrap grid system -->
+    <div class="row d-flex justify-content-center mt-5">
+      <!-- Card 1 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-bed" aria-hidden="true"></i>
+            <h4>AFFORDABLE HOTELS</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-cutlery" aria-hidden="true"></i>
+            <h4>DELICIOUS MEALS</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+            <h4>TRAVEL ASSISTANCE</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <h4>EXCITING DESTINATIONS</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-plane" aria-hidden="true"></i>
+            <h4>CONVENIENT TRIPS</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div data-aos="fade" class="col-12 col-sm-4 col-md-2">
+        <div class="card shadow-lg mb-3">
+          <div class="card-body">
+            <i class="fa fa-bicycle" aria-hidden="true"></i>
+            <h4>EXCITING EXPEDITIONS</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Booking -->
+  <div id="booking" class="container-fluid p-5" style="background-color: white;">
+    <h3>SEAMLESS TRAVEL BOOKINGS</h3>
+    <p>Easily Reserve Cabs, Trains, Flights, and Hotels – All in One Convenient Platform!</p>
+
+    <div class="row p-3 g-3 mt-5 align-items-center">
+      <!-- Image column (now all images are here) -->
+      <div data-aos="fade-left" class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+        <dotlottie-player id="animation" src="https://lottie.host/6f298780-b4b7-46ba-b746-b96d20a4c0ee/hrmQEq50u8.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+      </div>
+
+      <!-- Form column -->
+      <div id="form" data-aos="fade-right" class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="card shadow-lg mt-5" style="width: 100%; max-width: 400px;">
+          <div class="card-body">
+            <div class="row g-4 p-2 text-center">
+              <div class="col-md-3 col-6">
+                <a href="cab.html" class="btn btn-outline rounded-circle text-white">
+                  <i class="fa fa-taxi fa-2x" aria-hidden="true"></i>
+                </a>
+                <h6>CAB</h6>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="train.html" class="btn rounded-circle text-white">
+                  <i class="fa fa-train fa-2x" aria-hidden="true"></i>
+                </a>
+                <h6>TRAIN</h6>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="plane.html" class="btn rounded-circle text-white">
+                  <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
+                </a>
+                <h6>PLANE</h6>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="hotel.html" class="btn rounded-circle text-white">
+                  <i class="fa fa-building fa-2x" aria-hidden="true"></i>
+                </a>
+                <h6>HOTEL</h6>
+              </div>
+            </div>         
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Package -->
+  <div class="container-fluid" id="packages">
+    <h3 class="text-center">BOOK YOUR TOUR NOW</h3>
+    <p class="text-center" id="p">Explore Our Exclusive National & International Tour Packages and Find the Perfect Plan for You</p>
+
+    <div id="search" class="row d-flex justify-content-between mb-4 p-4">
+    <div class="col-md-4 mb-3">
+        <!-- Custom Button -->
+      <div class="dropdown ">
+        <a type="button" class="btn text-white w-100 rounded-pill dropdown-toggle" data-bs-toggle="dropdown" style="background-color: #005477;">
+          <i class="fa fa-map-marker" aria-hidden="true"></i> Plan Your Dream Trip
+        </a>
+        <ul class="dropdown-menu shadow-lg p-3">
+          <li class="mb-3"><a class="btn text-center rounded-pill dropdown-item" href="national.html" style="color: #005477; border: 2px solid #005477;">National</a></li>
+          <li><a class="btn text-center rounded-pill dropdown-item" href="international.html" style="color: #005477; border: 2px solid #005477;">International</a></li>
+        </ul>
+      </div>
+        
+    </div>
+    <div class="col-md-4 mb-3 d-flex justify-content-end">
+        <!-- Select -->
+        <select id="selectDestination" class="form-select rounded-pill" onchange="destinationType()">
+          <option value="popular">Popular Packages</option>
+          <option value="cultural">Cultural & Heritage</option>
+          <option value="adventure">Adventure</option>
+          <option value="tropical">Tropical</option>
+        </select>
+    </div>
+</div>
+   
+    <!-- Rajasthan -->
+    <div class="d-flex justify-content-center mb-4" data-aos="fade">
+        <div id="rajasthan" class="card shadow-lg" style="width: 90%; max-width: 1200px;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="c1.jpg" alt="A scenic view of Rajasthan" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Majestic Rajasthan: A Royal Heritage Expedition</h4>
+                        <p class="card-text">
+                          Step into the land of kings, where the rich history of palaces, vibrant culture, golden deserts, and magnificent forts create an unforgettable experience.           
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 10D/9N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 132 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Rajasthan, India</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                  <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                      <p>
+                          (119 reviews)
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                      </p>
+                      <h4><i class="fa fa-inr" aria-hidden="true"></i> 1,50,000</h4>
+                      <p>per person</p>
+                      <a href="booking.html?package=rajasthan" class="btn btn-outline-light rounded-pill">Book Now</a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Safari -->
+    <div class="d-flex justify-content-center mb-4" data-aos="fade">
+        <div id="safari" class="card shadow-lg" style="width: 90%; max-width: 1200px;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="a2.jpg" alt="A scenic view of Safari" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Ultimate African Safari: An Unforgettable Adventure Awaits!</h4>
+                        <p class="card-text">
+                           Embark on the adventure of a lifetime, where you can explore Africa’s incredible wildlife and breathtaking landscapes on a thrilling safari across the savannas.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 7D/6N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 116 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> East Africa</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (103 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 2,50,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=safari" class="btn btn-outline-light rounded-pill">Book Now</a>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fiji -->
+    <div class="d-flex justify-content-center mb-4" data-aos="fade">
+        <div id="fiji" class="card shadow-lg" style="width: 90%; max-width: 1200px;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="t2.jpeg" alt="A scenic view of Fiji" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Tropical Bliss: The Ultimate Fiji Island Getaway</h4>
+                        <p class="card-text">
+                           Escape to the pristine paradise of Fiji, where crystal-clear waters, white-sand beaches, lush jungles, and a welcoming culture promise the ultimate tropical getaway.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 6D/5N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 120 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Fiji</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (109 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 1,50,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=fiji" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Japan -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="japan" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="c3.jpeg" alt="A scenic view of Japan" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Timeless Japan: An Unforgettable Cultural & Heritage Odyssey</h4>
+                        <p class="card-text">
+                          Discover the timeless beauty of Japan, where ancient temples and shrines stand alongside cutting-edge technology, all set against stunning landscapes of mountains and seas.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 7D/6N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 104 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Japan</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (88 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 2,90,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=japan" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Everest -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="everest" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="a1.jpg" alt="A scenic view of Everest" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Everest Base Camp Trekking: Guided Adventure with Scenic Views, Cultural Tours & Acclimatization Hikes</h4>
+                        <p class="card-text">
+                           Trek through the rugged terrain of the Himalayas and challenge yourself with a breathtaking journey to the base of the world's highest peak, Mount Everest.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 12D/11N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 108 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Nepal</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (83 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 1,40,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=everest" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hawaii -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="hawaii" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="t3.jpeg" alt="A scenic view of Hawaii" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Aloha Adventure: The Ultimate Hawaii Island Hopping Experience</h4>
+                        <p class="card-text">
+                           Explore the enchanting islands of Hawaii, where volcanic landscapes, crystal-clear waters, rich cultural traditions, and spectacular sunsets combine for a paradise like no other.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 10D/9N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 97 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Hawaii</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (75 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 2,50,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=hawaii" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bali -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="bali" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="c2.jpeg" alt="A scenic view of Bali" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Epic Bali: A Thrilling Adventure into Culture, Tradition & Heritage</h4>
+                        <p class="card-text">
+                          Experience Bali's captivating blend of serenity and adventure, from tranquil beaches and sacred temples to vibrant markets and lush rice terraces.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 6D/5N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 110 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Bali, Indonesia</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (80 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 1,10,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=bali" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Costa Rica -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="costarica" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="a3.jpg" alt="A scenic view of Costa Rica" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Thrill Seekers' Paradise: Costa Rica Zip-Line & Rainforest Adventure</h4>
+                        <p class="card-text">
+                           Immerse yourself in the untamed beauty of Costa Rica, where rainforests, volcanoes, hot springs, and abundant wildlife await your exploration at every turn.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 6D/5N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 89 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Costa Rica</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (63 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 1,53,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=costarica" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alaska -->
+    <div class="d-flex justify-content-center mb-4">
+        <div id="alaska" class="card shadow-lg" style="width: 90%; max-width: 1200px; display: none;">
+            <div class="row no-gutters">
+                <!-- Column 1: Image -->
+                <div class="col-md-4">
+                    <img class="card-img" src="t1.jpg" alt="A scenic view of Alaskan" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+
+                <!-- Column 2: Details -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <div class="card-body text-start">
+                        <h4 class="card-title">Ultimate Alaskan Adventure Cruise: Explore the Last Frontier in Style!</h4>
+                        <p class="card-text">
+                           Venture into the raw wilderness of Alaska, where towering glaciers, rugged mountains, diverse wildlife, and vast, unspoiled landscapes promise an adventure of a lifetime.
+                        </p>
+                        <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true" style="color: #005477;"></i> 7D/6N | <i class="fa fa-users" aria-hidden="true" style="color: #005477;"></i> Bookings: 84 | <i class="fa fa-map-marker" aria-hidden="true" style="color: #005477;"></i> Alaska</p>                       
+                    </div>
+                </div>
+
+                <!-- Column 3: Button -->
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="padding: 20px; height: 100%; width: 100%; border-radius: 5px; background-color: #005477; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p>
+                           (70 reviews)
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                           <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 2,10,000</h4> 
+                        <p>per person</p>
+                        <a href="booking.html?package=alaska" class="btn btn-outline-light rounded-pill">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  <!-- Gallery -->
+  <div id="gallery" class="container-fluid">
+  <h3>PHOTO'S FROM TRAVELLERS</h3>
+  <p>Our gallery features stunning moments captured by travellers from around the world</p>
+  
+  <div class="row g-3 slideanim">
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g1.jpeg" alt="g1" class="img-fluid rounded shadow-lg">
+    </div>
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g2.jpeg" alt="g2" class="img-fluid rounded shadow-lg">
+    </div>
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g3.webp" alt="g3" class="img-fluid rounded shadow-lg">
+    </div>
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g4.jpeg" alt="g4" class="img-fluid rounded shadow-lg">
+    </div>
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g5.jpeg" alt="g5" class="img-fluid rounded shadow-lg">
+    </div>
+    <div data-aos="fade" class="col-md-4 col-6">
+      <img src="g6.jpeg" alt="g6" class="img-fluid rounded shadow-lg">
+    </div>
+  </div>
+</div>
+
+  <!-- Reviews -->
+  <div id="reviews" class="container-fluid">
+    <h3>What Our Travelers Are Saying</h3>
+    <p id="p">See what our travelers are saying about their unforgettable experiences and our exceptional service!</p>
+    
+    <div class="row p-3 g-3 align-items-center">
+      <div data-aos="fade" class="col-md-6 d-flex justify-content-center">  
+        <dotlottie-player src="https://lottie.host/32b85fab-fec4-466c-a3fa-04cdb8acbe7d/aQ0aEOfyN1.lottie" background="transparent" speed="1" style="width: 350px; height: 350px" loop autoplay></dotlottie-player>
+      </div>
+      <div data-aos="fade" class="col-md-6 d-flex justify-content-center">
+    <!-- Carousel -->
+    <div id="demo1" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#demo1" data-bs-slide-to="5"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r1.jpg" class="rounded-circle mb-3">
+                    <h5>Emily R.</h5>
+                    <p id="rating">Australia</p>
+                    <p id="rating">⭐⭐⭐⭐⭐</p>
+                  </div>
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Seamless trip to Japan. Excellent itinerary, superb customer service. Would definitely book with them again!</p>
+                  </div>   
+                </div>                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r2.jpg" class="rounded-circle mb-3">
+                    <h5>John D.</h5>
+                    <p id="rating">Italy</p>
+                    <p id="rating">⭐⭐⭐⭐⭐</p>
+                  </div>  
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Fantastic experience! They crafted the perfect honeymoon for us—flawless itinerary, great service. Highly recommend!</p>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r3.jpg" class="rounded-circle mb-3">
+                    <h5>Sarah M.</h5>
+                    <p id="rating">USA</p>
+                    <p id="rating">⭐⭐⭐⭐</p>
+                  </div>
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Great family vacation to Europe. Everything was booked well, but had a minor issue with a hotel. Still, I’d use them again!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r4.jpg" class="rounded-circle mb-3">
+                    <h5>Laura K.</h5>
+                    <p id="rating">Germany</p>
+                    <p id="rating">⭐⭐⭐⭐⭐</p>
+                  </div>
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Perfect South America trip—flights, transfers, and tours were all well-organized. Will book again for future travels!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r6.jpg" class="rounded-circle mb-3">
+                    <h5>Eddie T.</h5>
+                    <p id="rating">UK</p>
+                    <p id="rating">⭐⭐⭐</p>
+                  </div>
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Good trip overall, but communication could have been better. Still, enjoyed the vacation once everything was sorted.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row g-4 align-items-center">
+                  <div class="col-4">
+                    <img src="r5.jpg" class="rounded-circle mb-3">
+                    <h5>David P.</h5>
+                    <p id="rating">France</p>
+                    <p id="rating">⭐⭐⭐⭐⭐</p>
+                  </div>
+                  <div class="col-8">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i> Best travel agency I’ve used. They tailored the trip exactly to my needs and offered great 24/7 support. Highly recommend!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+ </div>
+  
+  <!-- Contact -->
+  <div id="contact" class="container-fluid">
+    <div class="row">
+      <div data-aos="fade" class="col-md-6 mt-2 form-group mb-4">
+        <h3 class="text-start">Contact us for your next adventure or any inquiries, and we'll be happy to assist you!</h3>       
+        <dotlottie-player src="https://lottie.host/a54f3704-d3aa-4995-8503-938c0d22b56b/3PTjeZOq2C.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+      </div>
+      <div data-aos="fade" class="col-md-6 form-group">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <form>
+              <input class="form-control mb-3" id="name" name="name" placeholder="Name" type="text" required>
+              <input class="form-control mb-3" id="email" name="email" placeholder="Email" type="email" required>
+              <input class="form-control mb-3" id="phone" name="phone" placeholder="Phone Number" type="number" required>
+              <textarea class="form-control mb-3" id="message" name="message" placeholder="Message" rows="5" required></textarea>
+              <button class="btn" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Column 1: About Us -->
+        <div class="col-md-4">
+          <h1><span style="color: #005477;">Globe</span><span style="color: #87CEEB;">Trek</span></h1>
+        </div>
+        
+        <!-- Footer Column 2: Useful Links -->
+        <div class="col-md-4">
+          <h5>Useful Links</h5>
+          <p>
+            <a href="#" class="btn text-white"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <a href="#" class="btn text-white"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <a href="#" class="btn text-white"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </p>
+        </div>
+        
+        <!-- Footer Column 3: Contact Info -->
+        <div class="col-md-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-map-marker"></i> 123 Street, City, Country</li>
+            <li><i class="fa fa-phone"></i> +123 456 7890</li>
+            <li><i class="fa fa-envelope"></i> email@example.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="text-center mt-4">
+        <p class="mb-0">© 2024-2028 GlobeTrek. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="popupMessage" class="alert alert-success"></div>
+  
+  <a id="scrollToTopBtn" type="button" class="btn btn-secondary scroll-btn" onclick="scrollToTop()"><i class="fa fa-chevron-circle-up"></i></a>
+  </section>
+</body>
+</html>

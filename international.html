@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeTrek International Tour Booking</title>
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .navbar {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    .navbar a {
+        font-size: 1.8rem;
+      }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
+    }
+
+    .card {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    #tour .text-center h4 {
+      font-size: 1.2rem;
+    }
+
+    .col-md-6 {
+      padding: 15px;
+    }
+
+    .form-control {
+      font-size: 1rem;
+      padding: 12px;
+    }
+
+    .btn {
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #004466;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 767px) {
+      .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      
+      .navbar a {
+        font-size: 1.4rem;
+      }
+      
+      .card {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .form-control {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px;
+      }
+    }
+
+    /* Large Screen Fix */
+    @media (min-width: 1200px) {
+      .card {
+        margin: 50px auto;
+      }
+
+      .container-fluid {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-light  ">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-toggler" type="button">
+        <span class="fa fa-arrow-left"></span>
+      </a>
+
+      <a class="navbar-brand mx-auto" href="#">
+        <b style="color: #005477;">Globe</b><b>Trek</b>
+      </a>
+
+      <a class="navbar-brand" href="#" style="color: #005477;"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help</a>
+    </div>
+  </nav>
+
+  <!-- Background Image -->
+  <img class="background-image" src="international.jpeg" alt="international">
+
+  <!-- International Tour Booking Form -->
+  <div class="card shadow-lg rounded-lg" id="tour">
+    <div class="card-body">
+      <h1 class="text-center" style="color: #005477;"><b>International Tour Booking Form</b></h1>
+      <form id="bookingForm" onsubmit="return validateForm()">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Booking Details -->
+            <h4 class="text-center" style="color: #005477;">Booking Details</h4>
+            <div class="text-start mb-3 mt-3">
+              <label for="tourLocationType" class="form-label">Tour Location Type</label>
+              <select class="form-select" id="tourLocationType" name="tourLocationType" onchange="toggleLocationInputs()" required>
+                <option value="">Select Location Type</option>
+                <option value="single">Single Location</option>
+                <option value="multiple">Multiple Locations</option>
+              </select>
+            </div>          
+            <div id="singleLocation" class="text-start mb-3" style="display:none;">
+              <label for="tourLocation" class="form-label">Tour Location</label>
+              <input type="text" class="form-control" id="tourLocation" name="tourLocation" placeholder="Enter tour location" required>
+            </div>           
+            <div id="multipleLocations" class="text-start mb-3" style="display:none;">
+              <label for="tourLocations" class="form-label">Tour Locations</label>
+              <textarea class="form-control" id="tourLocations" name="tourLocations" placeholder="Enter multiple locations (separate by commas)" rows="3"></textarea>
+            </div>
+            <div class="text-start mb-3">
+              <label for="tourType" class="form-label">Tour Type</label>
+              <select class="form-select" id="tourType" name="tourType" required>
+                <option value="">Select Tour Type</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Family">Family</option>
+                <option value="Honeymoon">Honeymoon</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="departureDate" class="form-label">Departure Date</label>
+              <input type="date" class="form-control" id="departureDate" name="departureDate" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="departureTime" class="form-label">Departure Time</label>
+              <input type="time" class="form-control" id="departureTime" name="departureTime" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="duration" class="form-label">Duration (in days)</label>
+              <input type="number" class="form-control" id="duration" name="duration" placeholder="Enter duration" required min="1">
+            </div>
+            <div class="text-start mb-3">
+              <label for="numberOfTravelers" class="form-label">Number of Travelers</label>
+              <input type="number" class="form-control" id="numberOfTravelers" name="numberOfTravelers" placeholder="Enter number of travelers" required min="1" max="10">
+            </div>
+            <div class="text-start mb-3">
+              <label for="flighttype" class="form-label">Flight Type</label>
+              <select class="form-select" id="flighttype" name="flighttype" required>
+                <option value="">Select Flight Type</option>
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+                <option value="First Class">First Class</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="roomType" class="form-label">Hotel Room Type</label>
+              <select class="form-select" id="roomType" name="roomType" required>
+                <option value="">Select Room Type</option>
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Suite">Suite</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="visaAssistance" class="form-label">Do you need assistance with visa processing?</label>
+              <select class="form-select" id="visaAssistance" name="visaAssistance" required>
+                <option value="">Select Visa Assistance Option</option>
+                <option value="Yes">Yes, I need assistance with visa processing</option>
+                <option value="No">No, I do not need visa assistance</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="specialRequests" class="form-label">Special Requests</label>
+              <textarea class="form-control" id="specialRequests" rows="2" placeholder="Any special requests or notes"></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- Personal Details -->
+            <h4 class="text-center" style="color: #005477;">Personal Details</h4>
+            <div class="text-start mb-3 mt-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your name" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>           
+            <div class="text-start mb-3">
+              <label for="nationality" class="form-label">Nationality</label>
+              <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Enter nationality" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="passportnumber" class="form-label">Passport Number</label>
+              <input type="number" class="form-control" id="passportnumber" name="passportnumber" placeholder="Enter passport number" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="passportExpiration" class="form-label">Passport Expiration Date</label>
+              <input type="date" class="form-control" id="passportExpiration" name="passportExpiration" required>
+            </div>
+            <div class="text-start mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea class="form-control" id="address" rows="2" placeholder="Enter address"></textarea>
+            </div>
+            <!-- Payment Details -->
+            <h4 class="text-center mt-5" style="color: #005477;">Payment Details</h4>
+            <div class="text-start mb-3 mt-3">
+              <label for="paymentMethod" class="form-label">Payment Method</label>
+              <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+              </select>
+            </div>
+            <div class="text-start mb-3">
+              <label for="billingAddress" class="form-label">Billing Address</label>
+              <input type="text" class="form-control" id="billingAddress" name="billingAddress" placeholder="Enter billing address" required>
+            </div>
+        </div>
+        
+        <h4 class="text-center" style="color: #005477;">Promo Code</h4>
+        <div class="text-start mb-3">
+          <input type="text" class="form-control" id="promoCode" name="promoCode" placeholder="Enter promo code" />
+        </div>
+        
+        <div class="form-check mt-4 mb-4">
+          <input class="form-check-input" type="checkbox" id="termsConditions" name="termsConditions" required>
+          <label class="form-check-label" for="termsConditions">
+            I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.
+          </label>
+        </div>
+        
+        <!-- Buttons in one row -->
+        <div class="d-flex justify-content-between">
+          <button type="reset" class="btn text-light" style="background-color: #005477; width: 48%;">Reset</button>
+          <button type="submit" class="btn text-light" style="background-color: #005477; width: 48%;">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ </div>     
+  
+    <div id="popup" class="alert alert-success" style="display: none;"></div>
+    
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="text-center">
+        <p class="mb-0">© 2024-2028 GlobeTrek. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+    
+  <script>
+  function toggleLocationInputs() {
+  const locationType = document.getElementById('tourLocationType').value;
+  const singleLocationField = document.getElementById('singleLocation');
+  const multipleLocationField = document.getElementById('multipleLocations');
+
+  if (locationType === 'single') {
+    singleLocationField.style.display = 'block';
+    multipleLocationField.style.display = 'none';
+  } else if (locationType === 'multiple') {
+    singleLocationField.style.display = 'none';
+    multipleLocationField.style.display = 'block';
+  } else {
+    singleLocationField.style.display = 'none';
+    multipleLocationField.style.display = 'none';
+  }
+}
+
+function validateForm() {
+  let tourLocationType = document.getElementById('tourLocationType').value;
+  let tourLocation = document.getElementById('tourLocation').value;
+  let tourLocations = document.getElementById('tourLocations').value;
+  let fullName = document.getElementById('fullName').value;
+  let email = document.getElementById('email').value;
+  let phone = document.getElementById('phone').value;
+  let nationality = document.getElementById('nationality').value;
+  let passportnumber = document.getElementById('passportnumber').value;
+  let passportExpiration = document.getElementById('passportExpiration').value;
+  let address = document.getElementById('address').value;
+  let paymentMethod = document.getElementById('paymentMethod').value;
+  let billingAddress = document.getElementById('billingAddress').value;
+  let termsConditions = document.getElementById('termsConditions').checked;
+  let promoCode = document.getElementById('promoCode').value;
+
+  // Validate location fields based on selection
+  if (tourLocationType === 'single' && !tourLocation) {
+    alert("Please enter a single tour location.");
+    return false;
+  } else if (tourLocationType === 'multiple' && !tourLocations) {
+    alert("Please enter multiple tour locations.");
+    return false;
+  }
+
+  // Validate promo code
+  let validPromoCodes = ['DISCOUNT10', 'SUMMER2025'];
+  if (promoCode && !validPromoCodes.includes(promoCode.toUpperCase())) {
+    alert("Invalid promo code.");
+    return false;
+  }
+
+  // Validate all required fields for booking details
+  if (!tourLocationType || !tourType || !departureDate || !departureTime || !duration || !numberOfTravelers || !flighttype || !roomType || !visaAssistance) {
+    alert("Please fill out all required booking fields.");
+    return false;
+  }
+
+  // Validate personal details
+  if (!fullName || !email || !phone || !nationality || !passportnumber || !passportExpiration) {
+    alert("Please fill out all required personal details.");
+    return false;
+  }
+
+  // Validate payment details
+  if (!paymentMethod || !billingAddress) {
+    alert("Please fill out the payment details.");
+    return false;
+  }
+
+  // Check if terms and conditions are agreed to
+  if (!termsConditions) {
+    alert("You must agree to the Terms and Conditions and Privacy Policy.");
+    return false;
+  }
+
+  // Prepare booking details for confirmation
+  let bookingDetails = `
+    Tour Type: ${document.getElementById('tourType').value}
+    Departure Date: ${document.getElementById('departureDate').value}
+    Departure Time: ${document.getElementById('departureTime').value}
+    Tour Location(s): ${tourLocationType === 'single' ? tourLocation : tourLocations}
+    Duration: ${document.getElementById('duration').value} day(s)
+    Number of Travelers: ${document.getElementById('numberOfTravelers').value}
+    Flight Type: ${document.getElementById('flighttype').value}
+    Room Type: ${document.getElementById('roomType').value}
+    Visa Assistance: ${document.getElementById('visaAssistance').value}
+    Special Requests: ${document.getElementById('specialRequests').value || 'N/A'}
+  `;
+  
+  let personalDetails = `
+    Full Name: ${fullName}
+    Email: ${email}
+    Phone: ${phone}
+    Nationality: ${nationality}
+    Passport Number: ${passportnumber}
+    Passport Expiration Date: ${passportExpiration}
+    Address: ${address || 'N/A'}
+  `;
+  
+  let paymentDetails = `
+    Payment Method: ${paymentMethod}
+    Billing Address: ${billingAddress}
+  `;
+
+  let confirmationMessage = `
+    Please confirm your booking details:
+    
+    Booking Details:
+    ${bookingDetails}
+    
+    Personal Details:
+    ${personalDetails}
+    
+    Payment Details:
+    ${paymentDetails}
+  `;
+
+  // Show confirmation prompt with details
+  let confirmation = confirm(confirmationMessage);
+  
+  if (confirmation) {
+    const popup = document.getElementById("popup");
+
+      localStorage.setItem("popupMessage", "Your international tour has been successfully booked! We’ll be sending you all the exciting details and next steps via email shortly. Get ready for an incredible adventure!");
+
+      setTimeout(function() {
+        popup.style.display = "none";
+        window.location.href = 'index.html';
+      }, 500);
+    return false;
+  }
+
+  return false;
+}
+  </script>
+</body>
+</html>
