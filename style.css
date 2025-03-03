@@ -528,12 +528,12 @@
     }
   
     #reviews .carousel-item .card-body p i { 
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: #005477;
     }
 
     #reviews .carousel-item .card-body p {
-      font-size: 1.4rem;
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
 
