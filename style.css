@@ -96,6 +96,10 @@
     }
 
     @media (max-width: 768px) {
+      #home {
+        padding-top: 55px;
+      }
+      
       #home .overlay-content h3 {
         font-size: 24px;
       }
